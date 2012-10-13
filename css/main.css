@@ -62,13 +62,11 @@ section {box-shadow: 0px 9px 18px red; }
 
 body {width: 850px; }
 
-section {width: 560px; }
-
 /* padding box settings */
 
 body, h1, h2, p {padding: 0px: }
 
-section {padding: 20px 60px 30px 0px; }
+section {padding: 30px 60px; }
 
 header img {padding-right: 15px; }
 
@@ -78,6 +76,7 @@ footer {padding: 15px; }
 
 /* border box settings */
 
+#top {border-radius: 25px; }
 body { border: 3px solid black; }
 
 header { border-bottom: 2px solid black; }

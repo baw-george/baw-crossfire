@@ -5,7 +5,8 @@
       <title>Homer's Online Music Shop</title>
       <link rel="shortcut icon" href="images/HOMER.ico" />
       <link rel="stylesheet" href="css/main.css" >
-                  
+      <link rel="stylesheet" href="css/nav.css" />
+                        
    </head>
    
    <body>
@@ -18,19 +19,28 @@
          </hgroup>
          
          <nav>
-            <a href="index.html">Home</a>
-            <a href="multi_column.html">Layout</a>
-            <a href="table.html">Tables</a>
-            <a href="images.html">Graphics</a>
-            <a href="video.html">Multimedia</a>
-            <a href="email_form.html">Forms</a>
-            <a href="product.php">Products</a>
-            <a href="geolocation.html">Stuff</a>
+           <ul id="main">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="multi_column.html">Layout</a>
+                <ul>
+                   <li><a href="two_column_left.html">2 Column Float Left</a></li>
+                   <li><a href="two_column_right.html">2 Column Float Right</a></li>
+                   <li><a href="three_column.html">3 Column Float</a></li>
+                </ul>
+            </li>
+            <li><a href="table.html">Tables</a></li>
+            <li><a href="images.html">Graphics</a></li>
+            <li><a href="video.html">Multimedia</a></li>
+            <li><a href="email_form.html">Forms</a></li>
+            <li><a href="product.php">Products</a></li>
+            <li><a href="geolocation.html">Stuff</a></li>
+           </ul>
          </nav>
       </header>
       
       <section id="container">
-         <header id="top"> <h1>Everything is on sale for Halloween</h1>
+         <header id="top">
+                 <h1>Everything is on sale for Halloween</h1>
          </header>
          <article>
          <h2>Home Page</h2>

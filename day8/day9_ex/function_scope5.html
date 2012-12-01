@@ -8,10 +8,18 @@
 
 <script>
    function globalFunction()
+   { alert('global function'); }
+   
+   function containerFunction()
    {
-	   alert('global function');
+	   var subFunction = function()
+	                     {
+		                     alert('container subfunction');
+		                     globalFunction();
+	                     }
    }
-   function containerFunction()  ;
+   
+   subFunction();
 </script>
 
 </body>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <title>node 1 exercise</title>
+   
+   <script>
+      function changeNode()
+      {
+    	  var newImg = document.createElement('img');
+    	  newImg.setAttribute("src","evilHomer_L.gif");
+    	  var dancing = document.getElementById('bottom');
+    	  dancing.appendChild(newImg);
+      }
+   </script>
+</head>
+
+<body>
+   <span id="top"><img src="evilHomer_L.gif"> <img src="evilHomer_L.gif"> <img src="evilHomer_L.gif" id="last"></span>
+   <br />
+   <span id="bottom"><img src="evilHomer_R.gif"></span>
+   <br />
+   <button onclick="changeNode();">Execute</button>
+</body>
+
+</html>

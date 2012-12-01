@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <title>Dynamic Table</title>
+   <script src="js/dynamic_table.js"></script>
+   
+   <style>
+      /* Form Style */
+      form { padding: 1em; }
+      
+      label { width: 5em;
+               float: left;
+             }
+               
+      input { border: 1px solid black;
+               float: left;
+               width: 12em;
+               margin-bottom: .5em;
+             }
+             
+      br { clear: left;}
+      
+      /* Table Style */
+      table { border-collapse: collapse;
+               table-layout: fixed;
+             }
+             
+      .narrow { display: table-cell;
+                width: 4em;
+              }       
+   
+      .wide { display: table-cell;
+              width: 12em;
+            }
+   
+      caption { text-align: left;
+                 font-size: 150%;
+                 font-weight: bold;
+                 margin: .5em 0;
+               }
+               
+      th { text-align: left;
+           text-decoration: underline;
+         }         
+   </style>
+</head>
+
+<body>
+   <!--  Content Starts Here -->
+   <h2>A Better Address Book - Please enter the following information:</h2>
+   
+   <fieldset>
+      <legend>Contact Information</legend>
+      <form>
+         <label for="name">Name: </label>
+         <input type="text" id="name" placeholder="Enter your name"/> <br />
+         <label for="email">Email: </label>
+         <input type="text" id="email" placeholder="Enter your email address" /> <br />
+         <label for="phone">Phone: </label>
+         <input type="text" id="phone" placeholder="Enter your telephone number" /> <br />
+         <button type="button" onclick="addContact();">Add</button>
+         <button type="reset">Reset</button>
+      </form>
+   </fieldset>
+   
+   <table id="contacts">
+      <caption>Contact List</caption>
+      <thead>
+         <tr>
+            <th class="narrow">Number</th>
+            <th class="wide">Name</th>
+            <th class="wide">Email</th>
+            <th class="wide">Cell</th>
+            <th class="narrow">&nbsp;</th>
+         </tr>
+      </thead>
+      <tbody>
+      </tbody>        
+   </table>
+   <!--  Content Ends Here -->
+</body>
+
+</html>

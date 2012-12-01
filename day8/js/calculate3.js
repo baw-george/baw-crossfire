@@ -1,27 +1,27 @@
 function calculate()
 {
-   //get input from user
-   var listPrice = document.getElementById('list_price').valueAsNumber;
-//   var discountPercent = document.getElementById('discount_percent').valueAsNumber;
-   var customerType = document.getElementById('type').value;
+    //get input from user
+	
+    var listPrice = document.getElementById('list_price').valueAsNumber;	
+    var customerType = document.getElementById('type').value;
+    
+    //call calculate discount percent function
+    var discountPercent = discPercCalc(listPrice, customerType);
+	
+    //call calculate discount amount function
+    var discount = discAmountCalc(listPrice, discountPercent);
+	
+    //call calculate discount price function
+    var discountPrice = discPriceCalc(listPrice, discount);
+	
+	// set output in currency format (sort of)
+    document.getElementById('discount_percent').valueAsNumber = discountPercent;
+    discount = '$' + discount.toFixed(2);
+    document.getElementById('discount').value = discount;
    
-  ===> call the discPerCalc function here
-   
-   // call calculate...
-   
-   //calculate discount amount and discount price
-   var discount = listPrice * discountPercent * 0.01; 	
-   var discountPrice = listPrice - discount;
-      
-   // set output in currency format (sort of)
-   document.getElementById('discount_percent').valueAsNumber = discountPercent;
-   
-   discount = '$' + discount.toFixed(2);
-   document.getElementById('discount').value = discount;
-   
-   discountPrice = '$'+ discountPrice.toFixed(2);
-   document.getElementById('discount_price').value = discountPrice;
-}
+    discountPrice = '$'+ discountPrice.toFixed(2);
+    document.getElementById('discount_price').value = discountPrice;
+}   // end calculate
 
 // calculate discount percent function
 

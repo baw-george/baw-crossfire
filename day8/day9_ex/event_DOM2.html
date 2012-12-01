@@ -29,9 +29,31 @@
 </style>
 
 <script>
+   function myOrange()
+   {
+	  window.alert("Orange block was clicked");
+   }
+
+   function myGreen()
+   {
+	   window.alert("Green block was clicked");
+   }
+
    function myBlue()
    {
 	   window.alert("Blue block was clicked");
+   }
+   
+   function addOrangeClick()
+   {
+	   var orange = document.getElementById("orange");
+	   orange.addEventListener("click", myOrange, false);
+   }
+   
+   function addGreenClick()
+   {
+	   var green = document.getElementById("green");
+	   green.addEventListener("click", myGreen, true);
    }
    
    function addBlueClick()
@@ -40,6 +62,8 @@
 	   blue.addEventListener("click", myBlue, false);
    }
    
+   window.addEventListener("load", addOrangeClick, false);
+   window.addEventListener("load", addGreenClick, false);
    window.addEventListener("load", addBlueClick, false);
 </script>
 

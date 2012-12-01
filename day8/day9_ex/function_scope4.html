@@ -7,11 +7,20 @@
 <body>
 
 <script>
-   function globalFunction()
+   function globalFunction() 
+   { alert('global function'); }
+   
+   function containerFunction()
    {
-	   alert('global function');
+	   var subFunction = function()
+	                      {
+		                    alert('container subfunction');
+		                    globalFunction();
+	                      }
+	   subFunction();
    }
-   globalFunction();
+   
+   containerFunction();
 </script>
 
 </body>

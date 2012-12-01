@@ -11,7 +11,14 @@
    {
 	   alert('global function');
    }
-   globalFunction();
+   
+   function containerFunction()
+   {
+	   var subFunction = function() { globalFunction(); }
+	   subFunction();
+   }
+   
+   containerFunction();
 </script>
 
 </body>

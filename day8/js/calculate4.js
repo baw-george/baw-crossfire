@@ -1,9 +1,7 @@
 // create helper function
-var $ = function (id)
-{
-   return document.getElementById(id);	
-}
 
+var $ = function (id)
+        { return document.getElementById(id); }
 
 function calculate()
 {
@@ -11,14 +9,15 @@ function calculate()
    var listPrice = $('list_price').valueAsNumber;
    var customerType = $('type').value;
    
-  ===> call the discPerCalc function here
-   
-   // call calculate...
-   
-   //calculate discount amount and discount price
-   var discount = listPrice * discountPercent * 0.01; 	
-   var discountPrice = listPrice - discount;
-      
+ //call calculate discount percent function
+   var discountPercent = discPercCalc(listPrice, customerType);
+	
+   //call calculate discount amount function
+   var discount = discAmountCalc(listPrice, discountPercent);
+	
+   //call calculate discount price function
+   var discountPrice = discPriceCalc(listPrice, discount);
+        
    // set output in currency format (sort of)
    $('discount_percent').valueAsNumber = discountPercent;
    
@@ -27,7 +26,7 @@ function calculate()
    
    discountPrice = '$'+ discountPrice.toFixed(2);
    $('discount_price').value = discountPrice;
-}
+}  // end calculate
 
 // calculate discount percent function
 
@@ -63,3 +62,26 @@ function discPriceCalc (listPrice, discount)
    	var discPrice = listPrice - discount;
    	return discPrice;
 }
+
+// date function
+
+function getToday()
+{
+	// create new date
+	var currentDate = new Date();
+	
+    // get current month, day, year values (month array starts at 0, thus the +1) 
+	var month = currentDate.getMonth() + 1;
+	var day = currentDate.getDate();
+	var year = currentDate.getFullYear();
+	
+    // set date formats
+	month = (month < 10) ? "0" + month : month;
+	day = (day < 10) ? "0" + day : day;
+	
+    // return date output
+	var dateString = "Today is " + month + "/" + day + "/" + year;
+	document.writeln(dateString);
+	
+}  // end date function
+
